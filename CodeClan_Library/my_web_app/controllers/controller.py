@@ -24,9 +24,11 @@ def add_book():
 
   return redirect('/books')
 
-@app.route('/books/<index>/delete', methods=['POST'])
+@app.route('/books/delete', methods=['POST'])
 def remove_book():
-  book_to_be_removed = [book for book in books if book.title == request.form["book_name"]]
+  # value_from_form = request.form["book_to_remove"]
+  # print(f"book to remove is {value_from_form}")
+  book_to_be_removed = [book for book in books if book.title == request.form["book_to_remove"]]
   books.remove(book_to_be_removed[0])
 
   return redirect('/books')
