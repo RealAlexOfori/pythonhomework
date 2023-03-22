@@ -19,7 +19,7 @@ def select_all():
     for row in results:
         artist = artist_repository.select(row["artist_id"])
     # Q: here ["artist_id"] belongs to the table not the class?
-        album = Album(row["title"], row["genre"], artist, row["id"])
+        album = Album(row["name"], row["genre"], artist, row["id"])
         albums.append(album)
     return albums
 
